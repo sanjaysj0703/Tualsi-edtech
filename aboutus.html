@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="Template Mo">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+  <title>About Us</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+  <!-- Additional CSS Files -->
+  <link rel="stylesheet" href="assets/css/fontawesome.css">
+  <link rel="stylesheet" href="assets/css/templatemo-edu-meeting.css">
+  <link rel="stylesheet" href="assets/css/owl.css">
+  <link rel="stylesheet" href="assets/css/lightbox.css">
+  <!--
+
+TemplateMo 569 Edu Meeting
+
+https://templatemo.com/tm-569-edu-meeting
+
+-->
+</head>
+
+<body>
+
+
+
+  <header class="header-area header-sticky">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav class="main-nav">
+            <!-- ***** Logo Start ***** -->
+            <a href="index.html" class="logo"><img src="assets/images/image.png" alt="TsedTech"></a>
+            <!-- ***** Logo End ***** -->
+            <!-- ***** Menu Start ***** -->
+            <ul class="nav">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="aboutus.html">About Us</a></li>
+              <li><a href="clients.html">Our Clients</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <!-- <li class="scroll-to-section"><a href="#courses">Courses</a></li> -->
+              <li class="scroll-to-section"><a href="#contact">Contact Us</a></li>
+              <a href="#" class="logo ibmLogo"><img src="assets/images/Logo.png" alt="IBM"></a>
+            </ul>
+            <a class='menu-trigger'>
+              <span>Menu</span>
+            </a>
+            <!-- ***** Menu End ***** -->
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+
+  <section class="heading-page header-text" id="top">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h6>The Power of Externships and Master Classes!</h6>
+          <p class="font-Color">At Sri Tulasi EdTech PVT LTD, we offer students a unique opportunity to immerse
+            themselves in real-world
+            work environments allowing them to put their learning into practice and explore their career aspirations.
+            Our externship programs prioritize experience over compensation, with a focus on practical exposure rather
+            than financial gain. Through these hands-on experiences, students can confirm whether their chosen field
+            aligns with their passion and skills. Additionally, our interactive master classes break down complex
+            topics, making it easier for learners to grasp today's cutting-edge technologies and excel in their careers.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="row p-5">
+        <div class="col-lg-6">
+          <h2>Mission</h2>
+          <p>"To empower aspiring professionals through high-quality, industry-relevant technology education and
+            hands-on
+            training, fostering innovation, employability, and lifelong learning. At Sri Tulasi EdTech, we are committed
+            to
+            bridging the gap between talent and opportunity by delivering excellence in education, mentorship, and
+            placement
+            support."</p>
+        </div>
+        <div class="col-lg-6">
+          <img src="assets/images/mission.png" alt="Mission">
+        </div>
+      </div>
+      <div class="row p-5">
+        <div class="col-lg-6">
+          <section>
+            <h2>Vision</h2>
+            <p>"To be a global leader in technology education, shaping the future of learning through innovation,
+              inclusivity, and excellence. We envision a world where every learner has access to cutting-edge skills,
+              hands-on experiences, and meaningful career opportunities—empowered by the knowledge and confidence they
+              gain at Sri Tulasi EdTech."</p>
+          </section>
+        </div>
+        <div class="col-lg-6">
+          <img src="assets/images/vision.png" alt="Mission">
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <script src="assets/js/isotope.min.js"></script>
+  <script src="assets/js/owl-carousel.js"></script>
+  <script src="assets/js/lightbox.js"></script>
+  <script src="assets/js/tabs.js"></script>
+  <script src="assets/js/isotope.js"></script>
+  <script src="assets/js/video.js"></script>
+  <script src="assets/js/slick-slider.js"></script>
+  <script src="assets/js/custom.js"></script>
+  <script>
+    //according to loftblog tut
+    $('.nav li:first').addClass('active');
+
+    var showSection = function showSection(section, isAnimate) {
+      var
+        direction = section.replace(/#/, ''),
+        reqSection = $('.section').filter('[data-section="' + direction + '"]'),
+        reqSectionPos = reqSection.offset().top - 0;
+
+      if (isAnimate) {
+        $('body, html').animate({
+          scrollTop: reqSectionPos
+        },
+          800);
+      } else {
+        $('body, html').scrollTop(reqSectionPos);
+      }
+
+    };
+
+    var checkSection = function checkSection() {
+      $('.section').each(function () {
+        var
+          $this = $(this),
+          topEdge = $this.offset().top - 80,
+          bottomEdge = topEdge + $this.height(),
+          wScroll = $(window).scrollTop();
+        if (topEdge < wScroll && bottomEdge > wScroll) {
+          var
+            currentId = $this.data('section'),
+            reqLink = $('a').filter('[href*=\\#' + currentId + ']');
+          reqLink.closest('li').addClass('active').
+            siblings().removeClass('active');
+        }
+      });
+    };
+
+    $('.main-menu, .responsive-menu, .scroll-to-section').on('click', 'a', function (e) {
+      e.preventDefault();
+      showSection($(this).attr('href'), true);
+    });
+
+    $(window).scroll(function () {
+      checkSection();
+    });
+  </script>
+</body>
+
+
+</body>
+
+</html>
